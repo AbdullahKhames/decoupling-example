@@ -35,3 +35,17 @@ but decoupling here means that whenever we want to change the database layer we 
 and will still work the same
 and same for the proxy if we want to change the implementation of the sending notification to client 
 we can use a different implementation of the  comment proxy interface and it will still work the same
+
+now we have multiple implementation of the same interfaces repository and proxy iunterface
+so with spring context we can change the implementation of the repository and proxy interface with the spring context configuration
+
+
+first we tried with the primary annotation on the implementation of the repository which uses db
+and the implementation of the proxy that uses mail server
+
+
+and also we tried with the qualifier annotation on the implementation of the repository which uses file
+and the implementation of the proxy that uses push notification
+
+
+and used two different service implementation for each configuration and called them by bean name in the main class

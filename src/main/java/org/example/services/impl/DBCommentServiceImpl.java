@@ -3,23 +3,24 @@ package org.example.services.impl;
 import org.example.mappers.NotificationMapper;
 import org.example.models.Comment;
 import org.example.models.Notification;
-import org.example.reposirtory.CommentRepository;
 import org.example.proxies.CommentNotificationProxy;
+import org.example.reposirtory.CommentRepository;
 import org.example.services.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component("fileCommentService")
-@Qualifier("fileCommentService")
-public class CommentServiceImpl implements CommentService {
+@Service("dbCommentService")
+@Qualifier("dbCommentService")
+public class DBCommentServiceImpl implements CommentService {
     private final CommentNotificationProxy commentNotificationProxy;
     private final CommentRepository commentRepository;
 
     private final NotificationMapper notificationMapper;
     @Autowired
-    public CommentServiceImpl(@Qualifier("pushCommentNotificationProxy") CommentNotificationProxy commentNotificationProxy,
-                              @Qualifier("fileCommentRepository") CommentRepository commentRepository,
+    public DBCommentServiceImpl(CommentNotificationProxy commentNotificationProxy,
+                               CommentRepository commentRepository,
                               NotificationMapper notificationMapper) {
         this.commentNotificationProxy = commentNotificationProxy;
         this.commentRepository = commentRepository;
@@ -27,9 +28,6 @@ public class CommentServiceImpl implements CommentService {
     }
     @Override
     public void publishComment(Comment comment) {
-        if (comment == null) {
-            throw new IllegalArgumentException("Comment can't be null");
-        }
         commentRepository.saveComment(comment);
         Notification notification = notificationMapper.mapToNotification(comment);
         commentNotificationProxy.sendNotification(notification);

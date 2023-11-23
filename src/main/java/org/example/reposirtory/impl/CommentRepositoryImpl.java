@@ -3,9 +3,15 @@ package org.example.reposirtory.impl;
 import org.example.config.ConnectionProvider;
 import org.example.models.Comment;
 import org.example.reposirtory.CommentRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 
+@Component
+@Qualifier("db")
+@Primary
 public class CommentRepositoryImpl implements CommentRepository {
     private Connection connect = null;
     private Statement statement = null;

@@ -8,7 +8,13 @@ import jakarta.mail.internet.MimeMultipart;
 import org.example.config.MailtrapConfiguration;
 import org.example.models.Notification;
 import org.example.proxies.CommentNotificationProxy;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
+@Component
+@Qualifier("mailCommentNotificationProxy")
+@Primary
 public class CommentNotificationProxyImpl implements CommentNotificationProxy {
     @Override
     public void sendNotification(Notification notification) {
