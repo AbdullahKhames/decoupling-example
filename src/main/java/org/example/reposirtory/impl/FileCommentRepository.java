@@ -3,9 +3,9 @@ package org.example.reposirtory.impl;
 import org.example.models.Comment;
 import org.example.reposirtory.CommentRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 @Qualifier("fileCommentRepository")
 public class FileCommentRepository implements CommentRepository {
     @Override

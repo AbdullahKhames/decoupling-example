@@ -5,11 +5,11 @@ import org.example.models.Comment;
 import org.example.reposirtory.CommentRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 
-@Component
+@Repository
 @Qualifier("db")
 @Primary
 public class CommentRepositoryImpl implements CommentRepository {

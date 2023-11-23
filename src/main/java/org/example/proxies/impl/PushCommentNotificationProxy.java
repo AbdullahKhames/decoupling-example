@@ -3,9 +3,9 @@ package org.example.proxies.impl;
 import org.example.models.Notification;
 import org.example.proxies.CommentNotificationProxy;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @Qualifier("pushCommentNotificationProxy")
 public class PushCommentNotificationProxy implements CommentNotificationProxy {
     @Override

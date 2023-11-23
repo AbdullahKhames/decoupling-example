@@ -10,9 +10,9 @@ import org.example.models.Notification;
 import org.example.proxies.CommentNotificationProxy;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 @Qualifier("mailCommentNotificationProxy")
 @Primary
 public class CommentNotificationProxyImpl implements CommentNotificationProxy {

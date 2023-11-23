@@ -8,9 +8,9 @@ import org.example.proxies.CommentNotificationProxy;
 import org.example.services.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component("fileCommentService")
+@Service("fileCommentService")
 @Qualifier("fileCommentService")
 public class CommentServiceImpl implements CommentService {
     private final CommentNotificationProxy commentNotificationProxy;
