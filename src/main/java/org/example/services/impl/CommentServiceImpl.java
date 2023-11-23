@@ -4,7 +4,7 @@ import org.example.mappers.NotificationMapper;
 import org.example.models.Comment;
 import org.example.models.Notification;
 import org.example.reposirtory.CommentRepository;
-import org.example.services.CommentNotificationProxy;
+import org.example.proxies.CommentNotificationProxy;
 import org.example.services.CommentService;
 
 public class CommentServiceImpl implements CommentService {

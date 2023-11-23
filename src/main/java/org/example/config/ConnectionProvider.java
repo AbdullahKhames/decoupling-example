@@ -1,4 +1,4 @@
-package org.example.reposirtory.impl;
+package org.example.config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

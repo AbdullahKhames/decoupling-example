@@ -4,7 +4,7 @@ import org.example.mappers.impl.NotificationMapperImpl;
 import org.example.models.Comment;
 import org.example.reposirtory.impl.CommentRepositoryImpl;
 import org.example.services.CommentService;
-import org.example.services.impl.CommentNotificationProxyImpl;
+import org.example.proxies.impl.CommentNotificationProxyImpl;
 import org.example.services.impl.CommentServiceImpl;
 
 import java.time.LocalDateTime;

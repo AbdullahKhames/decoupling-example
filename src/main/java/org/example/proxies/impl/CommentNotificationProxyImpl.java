@@ -1,4 +1,4 @@
-package org.example.services.impl;
+package org.example.proxies.impl;
 
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
@@ -7,7 +7,7 @@ import jakarta.mail.internet.MimeMessage;
 import jakarta.mail.internet.MimeMultipart;
 import org.example.config.MailtrapConfiguration;
 import org.example.models.Notification;
-import org.example.services.CommentNotificationProxy;
+import org.example.proxies.CommentNotificationProxy;
 
 public class CommentNotificationProxyImpl implements CommentNotificationProxy {
     @Override

@@ -1,4 +1,4 @@
-package org.example.services;
+package org.example.proxies;
 
 import org.example.models.Notification;
 
